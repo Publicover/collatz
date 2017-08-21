@@ -12,21 +12,18 @@ def collatz_conjecture(starting_point)
       digits << starting_point
     end
   end
-
   text_file = File.open("collatz.txt", "a")
-  text_file << "#{original} here: "
-  text_file << "#{digits}"
-  text_file << "that's #{digits.length} items"
+  text_file << "#{original} here: \n"
+  text_file << "#{digits}\n"
+  text_file << "that's #{digits.length} items\n\n"
   text_file.close
-
 end
 
-def collatz_loop(starting = 100, ending = 10000)
+def collatz_loop(starting = 100, ending = 110)
   until starting == ending
     collatz_conjecture(starting)
     starting += 1
   end
-
 end
 
 print collatz_loop
