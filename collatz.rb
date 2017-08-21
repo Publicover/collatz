@@ -1,12 +1,3 @@
-# def Collatz
-#
-#
-#
-# end
-
-
-
-
 def collatz_conjecture(starting_point)
 
   digits = []
@@ -22,21 +13,13 @@ def collatz_conjecture(starting_point)
     end
   end
 
-  puts
-  puts "#{original} here:"
-  print digits
-  puts
-  # puts
-  # puts "that's #{digits.length} items."
-  
+  text_file = File.open("collatz.txt", "a")
+  text_file << "#{original} here: "
+  text_file << "#{digits}"
+  text_file << "that's #{digits.length} items"
+  text_file.close
 
 end
-
-# puts
-# puts "give me a starting number"
-# input = gets.chomp
-# puts collatz_conjecture(input)
-
 
 def collatz_loop(starting = 100, ending = 10000)
   until starting == ending
