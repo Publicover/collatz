@@ -15,7 +15,7 @@ def collatz_conjecture(starting_point)
   text_file = File.open("collatz.txt", "a")
   text_file << "#{original} here: \n"
   text_file << "#{digits}\n"
-  text_file << "that's #{digits.length} items\n\n"
+  text_file << "that's #{digits.length} items\n#{digits.max} is the highest number\n\n"
   text_file.close
 end
 
